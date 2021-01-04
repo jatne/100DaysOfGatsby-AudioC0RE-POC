@@ -1,12 +1,28 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../../components/Layout';
 import LocationsNav from '../../components/LocationsNav';
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
-export default function Location() {
+
+export default function Location(props) {
+  const {mainContent} = props.data.contentfulPage;
+
   return (
     <Layout>
-      <h3>Locations:</h3>
+      {mainContent ? renderRichText(mainContent) : ''}
       <LocationsNav />
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    contentfulPage(slug: { eq: "location" }) {
+      title
+      mainContent {
+        raw
+      }
+    }
+  }
+`
