@@ -21,7 +21,7 @@ export default function Nav() {
         {pages.nodes.map(page => (
           <li key={page.id}>
             <Link to={`/${page.slug !== 'home' ? page.slug : ''}`}>{page.title}</Link>
-            {page.slug === 'locations' ? <LocationsNav /> : ''}
+            {page.slug === 'location' ? <LocationsNav /> : ''}
           </li>
         ))}
       </ul>
