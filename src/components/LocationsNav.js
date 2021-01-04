@@ -19,6 +19,7 @@ export default function LocationsNav() {
       {locations.nodes.map(location => (
         <li key={location.id}>
           <Link to={`/location/${location.slug}`}>{location.name}</Link>
+          {location.slug === 'location' ? <LocationsNav /> : ''}
         </li>
       ))}
     </ul>
