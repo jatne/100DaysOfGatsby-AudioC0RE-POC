@@ -14,8 +14,6 @@ export default function LocationsNav() {
     }
   `);
 
-  console.log(locations);
-
   return (
     <ul>
       {locations.nodes.map(location => (
