@@ -1,21 +1,30 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
+import LocationsNav from './LocationsNav';
 
 export default function Nav() {
-  const { locations } = useStaticQuery(graphql`
+  const { pages } = useStaticQuery(graphql`
     query {
-      locations: allContentfulLocation {
+      pages: allContentfulPage {
         nodes {
-          name
+          id
+          title
           slug
         }
       }
     }
   `);
 
-  console.log(locations);
-
   return (
-    <>NAV</>
+    <nav>
+      <ul>
+        {pages.nodes.map(page => (
+          <li key={page.id}>
+            <Link to={`/${page.slug !== 'home' ? page.slug : ''}`}>{page.title}</Link>
+            {page.slug === 'locations' ? <LocationsNav /> : ''}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
