@@ -5,8 +5,8 @@ import LocationsNav from '../../components/LocationsNav';
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 
-export default function Location(props) {
-  const {mainContent} = props.data.contentfulPage;
+export default function Location({data}) {
+  const {mainContent} = data.contentfulPage;
 
   return (
     <Layout>
