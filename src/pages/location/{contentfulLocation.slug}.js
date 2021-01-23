@@ -2,8 +2,8 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../../components/Layout';
 
-export default function Component(props) {
-  const { name } = props.data.contentfulLocation;
+export default function Component({data}) {
+  const {name} = data.contentfulLocation;
 
   return (
     <Layout>

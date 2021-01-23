@@ -3,8 +3,8 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
-export default function Home(props) {
-  const {mainContent} = props.data.contentfulPage;
+export default function Home({data}) {
+  const {mainContent} = data.contentfulPage;
 
   return (
     <Layout>
