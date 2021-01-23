@@ -28,5 +28,12 @@ module.exports = {
       __key: "images",
     },
     "@chakra-ui/gatsby-plugin",
+    {
+      resolve: `gatsby-source-formium`,
+      options: {
+        projectId: process.env.GATSBY_FORMIUM_PROJECTID,
+        accessToken: process.env.FORMIUM_TOKEN,
+      },
+    },
   ],
 };
