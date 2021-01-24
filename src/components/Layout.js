@@ -1,14 +1,16 @@
 import React from 'react';
-import Nav from './Nav';
 import { Container } from '@chakra-ui/react';
+import Header from './Header';
 
 export default function Layout({children}) {
   return (
     <>
-      <Nav />
       <Container
-        size="60vw"
-      >
+        maxW={['100%', '100%', '90vw']}
+        bg="white"
+        color="gray.800"
+        as="header">
+        <Header />
         {children}
       </Container>
     </>
