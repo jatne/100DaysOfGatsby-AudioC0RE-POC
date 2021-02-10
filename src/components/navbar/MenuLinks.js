@@ -24,7 +24,7 @@ export default function MenuLinks ({isOpen}) {
 
 
   const MenuLink = () => menu.pages.map(page => (
-    <ListItem>
+    <ListItem className="top-menu">
       <Link
         as={GatsbyLink}
         to={`/${page.slug !== 'home' ? page.slug : ''}`}

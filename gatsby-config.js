@@ -19,6 +19,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -36,5 +37,11 @@ module.exports = {
       },
     },
     "gatsby-plugin-preact",
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
+      }
+    },
   ],
 };
