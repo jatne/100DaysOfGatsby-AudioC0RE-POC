@@ -43,5 +43,18 @@ module.exports = {
         implementation: require('sass'),
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `audioC0RE`,
+        short_name: `audioC0RE`,
+        start_url: `/`,
+        background_color: `#FFF`,
+        theme_color: `#dc9393`,
+        display: `standalone`,
+        icon: './src/images/ico.svg',
+      },
+    },
+    "gatsby-plugin-offline"
   ],
 };
